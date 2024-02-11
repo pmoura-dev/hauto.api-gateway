@@ -27,7 +27,7 @@ jobs:
 
       - name: Build and push the Docker image
         env:
-          IMAGE_NAME: hauto.device-gateway
+          IMAGE_NAME: hauto.api-gateway
         run: |
           VERSION=$(echo $TAG_NAME | sed 's/v//')
           docker build -t $IMAGE_NAME .
