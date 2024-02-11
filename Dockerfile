@@ -1,5 +1,5 @@
 # The builder image, used to build the virtual environment
-FROM python:3.12-buster AS builder
+FROM python:3.12-bullseye AS builder
 
 RUN pip install poetry==1.4.2
 
