@@ -1,5 +1,3 @@
-import os
-
 from faststream.rabbit import RabbitBroker
 
 import config

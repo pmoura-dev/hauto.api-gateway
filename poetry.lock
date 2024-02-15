@@ -198,13 +198,13 @@ files = [
 
 [[package]]
 name = "fast-depends"
-version = "2.3.1"
+version = "2.4.0b0"
 description = "FastDepends - extracted and cleared from HTTP domain logic FastAPI Dependency Injection System. Async and sync are both supported."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "fast_depends-2.3.1-py3-none-any.whl", hash = "sha256:1264fcca7f90eb908ba9ef060ca5cc56b381a4232860214695bf3176af40dece"},
-    {file = "fast_depends-2.3.1.tar.gz", hash = "sha256:f7a7d56f5425506be2104561176c4a92ddbe10d23e5a7d6a7e04c593cd0bc76b"},
+    {file = "fast_depends-2.4.0b0-py3-none-any.whl", hash = "sha256:ac8c9c1395f06b697827cd11484648a96fa0d944f67393345666a5afa3ce440e"},
+    {file = "fast_depends-2.4.0b0.tar.gz", hash = "sha256:3542f6c24a9550405e4dbbb0c115bea683cf6064a28170f2825cbef71b3fbe8a"},
 ]
 
 [package.dependencies]
@@ -212,9 +212,9 @@ anyio = ">=3.0.0,<5.0.0"
 pydantic = ">=1.7.4,<1.8 || >1.8,<1.8.1 || >1.8.1,<3.0.0"
 
 [package.extras]
-dev = ["fast-depends[doc]", "fast-depends[test]", "mypy (>=1.8.0)", "ruff (==0.1.11)"]
+dev = ["fast-depends[doc]", "fast-depends[test]", "mypy (>=1.8.0)", "ruff (==0.1.13)"]
 doc = ["mdx-include (>=1.4.1,<2.0.0)", "mkdocs-markdownextradata-plugin (>=0.1.7,<0.3.0)", "mkdocs-material (>=9.4.0,<10.0.0)", "mkdocs-minify-plugin (>=0.7.0,<1.0.0)"]
-test = ["coverage[toml] (>=7.2.0,<8.0.0)", "pytest (>=7.4.0,<8)"]
+test = ["coverage[toml] (>=7.2.0,<8.0.0)", "dirty-equals (>=0.7.0,<0.8)", "pytest (>=7.4.0,<8)"]
 
 [[package]]
 name = "fastapi"
@@ -238,19 +238,18 @@ all = ["email-validator (>=2.0.0)", "httpx (>=0.23.0)", "itsdangerous (>=1.1.0)"
 
 [[package]]
 name = "faststream"
-version = "0.4.1"
+version = "0.4.2"
 description = "FastStream: the simplest way to work with a messaging queues"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "faststream-0.4.1-py3-none-any.whl", hash = "sha256:f7bac4396a599decad1d2c9372f2c236744a51a49cb50787c3bb4f21341ae078"},
-    {file = "faststream-0.4.1.tar.gz", hash = "sha256:176d7491d13645eb197366c3d2fc9d8508c39df0296a258e82fb43e22801ca9e"},
+    {file = "faststream-0.4.2-py3-none-any.whl", hash = "sha256:914b6a938ff34e0163ab80b5c4ab9f5bbad093c53e4550f4e2f8be8498ade60b"},
+    {file = "faststream-0.4.2.tar.gz", hash = "sha256:611a8b9d664f405df12cd151003bb97828fa13de347671a2dcde0be76b5b19f4"},
 ]
 
 [package.dependencies]
-aio-pika = {version = ">=9,<10", optional = true, markers = "extra == \"rabbit\""}
 anyio = ">=3.7.1,<5"
-fast-depends = ">=2.2.6,<2.4.0"
+fast-depends = ">=2.4.0b0,<2.5.0"
 typer = ">=0.9,<1"
 typing-extensions = ">=4.8.0"
 
@@ -1101,4 +1100,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "a07d029e2fb7b326f494bf11847f0b223e03c1e47cd7a447b8675291f3e47888"
+content-hash = "81c93cccc50ac0313b6235ec5a776d6dc0e52b1efff2e372a25c2b24dd423d32"

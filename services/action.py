@@ -15,9 +15,11 @@ async def set_heating_threshold_temperature(device_id: int, value: int):
     message = {"device_id": device_id, "value": value}
     await action_request("set_heating_threshold_temperature", message)
 
+
 async def set_cooling_threshold_temperature(device_id: int, value: int):
     message = {"device_id": device_id, "value": value}
     await action_request("set_cooling_threshold_temperature", message)
+
 
 async def set_heater_cooler_mode(device_id: int, mode: str):
     message = {"device_id": device_id, "mode": mode}
