@@ -11,6 +11,11 @@ async def turn_off(device_id: int):
     await action_request("turn_off", message)
 
 
+async def set_rgb_color(device_id: int, rgb_color: dict):
+    message = {"device_id": device_id, "Color": rgb_color}
+    await action_request("set_rgb_color", message)
+
+
 async def set_heating_threshold_temperature(device_id: int, value: int):
     message = {"device_id": device_id, "value": value}
     await action_request("set_heating_threshold_temperature", message)

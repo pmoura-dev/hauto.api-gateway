@@ -30,7 +30,11 @@ async def turn_off(device_id: int):
 
 @router.post("/set_rgb_color")
 async def set_rgb_color(device_id: int, body: dict):
-    raise HAUTOError(501, "Action is not implemented")
+    try:
+        await action.set_rgb_color(device_id, {"Red": body["red"], "Green": body["green"], "Blue": body["blue"]})
+    except Exception as e:
+        print(e)
+        raise HAUTOError(501, "Action is not implemented")
 
 
 class Temperature(BaseModel):
