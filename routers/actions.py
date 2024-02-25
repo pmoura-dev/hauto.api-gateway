@@ -5,7 +5,8 @@ from errors.models import HAUTOError
 from services import action
 
 router = APIRouter(
-    prefix="/actions/{device_id}"
+    prefix="/devices/{device_id}/action",
+    tags=["Actions"]
 )
 
 

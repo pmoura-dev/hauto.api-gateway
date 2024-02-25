@@ -1,0 +1,12 @@
+
+# Transaction Service
+
+POST /execute
+
+body:
+{
+    "proc_name": "get_device",
+    "params": {
+        "p_device_id": 4
+    }
+}
