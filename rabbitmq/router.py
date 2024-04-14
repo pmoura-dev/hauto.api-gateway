@@ -6,10 +6,11 @@ from faststream.rabbit.fastapi import RabbitRouter
 import config
 from rabbitmq.types import *
 from services.notifications import notification_service
+from services.notifications.service import NotificationMessage, NotificationType
 
 router = RabbitRouter(
     host=config.RABBITMQ_HOST,
-    port=config.RABBITMQ_PORT,
+    port=int(config.RABBITMQ_PORT),
     login=config.RABBITMQ_USER,
     password=config.RABBITMQ_PASSWORD,
 )
@@ -49,4 +50,9 @@ async def handle_action_failure(correlation_id: CorrelationID, message: ActionFa
 
 @router.subscriber(state_updates_queue, devices_exchange)
 async def handle_state_updates(message: StateUpdatedMessage):
-    notification_service.send_notification(jsonable_encoder(message, exclude_none=True))
+    notification = NotificationMessage(
+        type=NotificationType.STATE,
+        message=message
+    )
+
+    notification_service.send_notification(jsonable_encoder(notification, exclude_none=True))

@@ -1,6 +1,21 @@
-from typing import Any
+from enum import Enum
+from typing import Union
 
 import requests
+from pydantic import BaseModel
+
+from rabbitmq.types import StateUpdatedMessage
+
+
+class NotificationType(str, Enum):
+    STATE = "state"
+
+
+class NotificationMessage(BaseModel):
+    type: NotificationType
+    message: Union[
+        StateUpdatedMessage
+    ]
 
 
 class NotificationService:
@@ -14,6 +29,6 @@ class NotificationService:
         if client in self.notification_urls:
             del self.notification_urls[client]
 
-    def send_notification(self, message: Any) -> None:
+    def send_notification(self, message: NotificationMessage) -> None:
         for client_ip, url in self.notification_urls.items():
             requests.post(url, json=message)
