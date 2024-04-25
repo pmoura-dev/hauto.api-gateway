@@ -4,7 +4,9 @@ from faststream.rabbit import ExchangeType, RabbitExchange, RabbitQueue
 from faststream.rabbit.fastapi import RabbitRouter
 
 import config
-from rabbitmq.types import *
+from rabbitmq.types import DEVICES_EXCHANGE, ACTION_SUCCESSES_QUEUE, ACTION_SUCCEEDED_TOPIC, ACTION_FAILURES_QUEUE, \
+    ACTION_FAILED_TOPIC, STATE_UPDATES_QUEUE, STATE_UPDATED_TOPIC, CorrelationID, ActionSucceededMessage, \
+    ActionFailedMessage, StateUpdatedMessage
 from services.notifications import notification_service
 from services.notifications.service import NotificationMessage, NotificationType
 

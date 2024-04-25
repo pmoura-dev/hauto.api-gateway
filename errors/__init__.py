@@ -1,12 +1,10 @@
 from pydantic import BaseModel
 
 
-class HAUTOError(Exception):
-    def __init__(self, error: str):
-        if error == "":
-            error = "Something went wrong."
+class HAUTOAPIError(Exception):
+    def __init__(self, error: str = "Something went wrong"):
         self.error = error
 
 
-class HAUTOErrorResponse(BaseModel):
+class HAUTOAPIErrorResponse(BaseModel):
     error: str

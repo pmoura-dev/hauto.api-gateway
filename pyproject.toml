@@ -4,13 +4,12 @@ version = "0.1.0"
 description = ""
 authors = ["Pedro Moura <pmoura.dev@gmail.com>"]
 readme = "README.md"
-packages = [{include = "hauto"}]
 
 [tool.poetry.dependencies]
 python = "^3.12"
 fastapi = "^0.110.0"
-uvicorn = {extras = ["standard"], version = "^0.28.0"}
-faststream = {extras = ["rabbit"], version = "^0.4.7"}
+uvicorn = { extras = ["standard"], version = "^0.28.0" }
+faststream = { extras = ["rabbit"], version = "^0.4.7" }
 requests = "^2.31.0"
 
 
